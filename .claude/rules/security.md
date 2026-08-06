@@ -11,3 +11,7 @@
 - En Server Actions y API Routes: validar y sanear todo input externo (body, query params, headers) antes de usarlo en queries, comandos de shell o URLs — nunca interpolar input de usuario directamente.
 - Tratar cualquier consulta con SQL/RPC dinámico, `dangerouslySetInnerHTML`, `eval`, construcción dinámica de rutas de archivo o regex a partir de input de usuario como hallazgo de severidad alta (OWASP Top 10: Injection, XSS, SSRF, Broken Access Control) y proponer la corrección antes de continuar.
 - Verificar que los endpoints/Server Actions que exponen datos financieros o de otros usuarios validen el rol (`is_staff()`/`is_staff_admin()`) y no confíen únicamente en el filtrado del lado del cliente.
+
+## Supply-chain (MCP servers y ejecución de paquetes)
+- En `.mcp.json` (o cualquier config que ejecute paquetes automáticamente, ej. `npx -y ...`), fijar siempre una versión exacta del paquete (`paquete@X.Y.Z`), nunca `@latest`. `@latest` + auto-confirmación ejecuta sin revisión cualquier versión futura que se publique, incluida una comprometida.
+- Al actualizar la versión pineada de un MCP server, hacerlo como cambio explícito y revisado (no automático), verificando el changelog del paquete.

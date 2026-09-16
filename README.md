@@ -15,3 +15,7 @@ Next.js + TypeScript, con animaciones interactivas dirigidas por scroll y un for
 ## Estado
 
 En desarrollo.
+
+## Uso de IA
+
+Sitio dirigido de principio a fin con Claude Code: yo definí el concepto visual, la estructura de animaciones y el flujo de reserva, y revisé y probé cada iteración antes de publicarla. Estoy reforzando en paralelo mis fundamentos técnicos independientes (JavaScript, TypeScript, debugging) para poder evaluar y dirigir cada vez mejor el código que produce un agente de IA.
